@@ -1,5 +1,9 @@
 import React from "react";
 import axios from "axios";
+import styled from 'styled-components'
+
+
+
 
 class Login extends React.Component  {
   // make a post request to retrieve a token from the api
@@ -40,7 +44,7 @@ render(){
 
       return (
 
-        <>
+        <StyledLogin>
 
           <h1>Welcome to the Bubble App!</h1>
       
@@ -69,10 +73,11 @@ render(){
           <button>Submit</button>
           
         </form>
-        </>
+        </StyledLogin>
       );
     }
 };
+
 
 export default Login;
 
@@ -82,3 +87,11 @@ export default Login;
 //3. MAKE SURE THAT FORM INPUTS INCLUDE THE LABEL TEST "username" and "password" RESPECTIVELY.
 //4. If either the username or password is not displaied display EXACTLY the following words: Username or Password not valid.
 //5. If the username / password is equal to Lambda School / i<3Lambd4, save that token to localStorage.
+
+
+
+const StyledLogin = styled.div`
+  display:flex;
+  flex-direction:column;
+  margin:15% auto;
+`
