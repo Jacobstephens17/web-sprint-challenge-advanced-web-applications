@@ -47,7 +47,9 @@ const ColorList = ({ colors, updateColors, getColorList }) => {
 
   return (
     <div className="colors-wrap">
-
+  
+    <button>Log Out</button>
+    
       <p>colors</p>
       
       <ul>

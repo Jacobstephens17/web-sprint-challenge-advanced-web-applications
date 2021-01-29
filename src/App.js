@@ -12,10 +12,7 @@ const [isLoggedIn, setLoggedIn] = useState(false)
   return (
     <Router>
       <div className="App">
-      <Route exact path="/" 
-        render={(props) => {
-          return <Login {...props} setLoggedIn={setLoggedIn} />
-        }} />
+      <Route exact path="/" render={(props) => { return <Login {...props} setLoggedIn={setLoggedIn} />}} />
         <PrivateRoute exact path='/bubblepage' component={BubblePage} />
       </div>
     </Router>
