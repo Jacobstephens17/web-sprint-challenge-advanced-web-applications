@@ -7,7 +7,6 @@ import BubblesForm from '../components/BubblesForm'
 import styled from 'styled-components'
 
 const BubblePage = () => {
-
   const [colorList, setColorList] = useState([]);
 
   const getListData = () => {
