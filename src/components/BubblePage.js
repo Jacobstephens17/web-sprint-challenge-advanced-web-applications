@@ -5,9 +5,15 @@ import axiosWithAuth from '../helpers/axiosWithAuth';
 import { fetchColorList } from '../fetchData/fetchColorData'
 import BubblesForm from '../components/BubblesForm'
 import styled from 'styled-components'
+import { useHistory } from 'react-router-dom';
+
 
 const BubblePage = () => {
+
+
   const [colorList, setColorList] = useState([]);
+
+  const { push } = useHistory();
 
   const getListData = () => {
     fetchColorList()
@@ -34,6 +40,12 @@ const BubblePage = () => {
     getListData()
   }, []);
 
+
+  const logout = () => {
+    push('/') 
+  }
+
+
   return (
     <>
       <ColorList colors={colorList} updateColors={setColorList} getColorList={getListData} />
@@ -47,6 +59,7 @@ const BubblePage = () => {
       </StyledForm>
 
       </StyledPage>
+      <Button onClick={logout}>Log Out</Button>
 
     </>
   );
@@ -64,10 +77,19 @@ const StyledPage = styled.div`
 
 `
 
+const Button = styled.button`
+  width:5rem;
+  margin:1rem auto;
+  height:2rem;
+  border-top-left-radius:8px;
+  border-bottom-left-radius:8px;
+
+`
+
 const StyledForm = styled.div`
-display:flex;
-padding-top:4rem;
-margin: 0 auto;
-width:25%;
+  display:flex;
+  padding-top:4rem;
+  margin: 0 auto;
+  width:25%;
 
 `

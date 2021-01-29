@@ -38,7 +38,7 @@ class BubblesForm extends React.Component {
     render(){
         return(
             <div>
-                <h1> New Bubble </h1>
+                <h1> Add Bubble </h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>
                         Color Name: 

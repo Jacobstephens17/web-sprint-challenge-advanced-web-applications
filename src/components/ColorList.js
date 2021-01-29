@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import axiosWithAuth from "../helpers/axiosWithAuth";
 import EditMenu from './EditMenu'
-import { useHistory } from 'react-router-dom';
 
 
 const initialColor = {
@@ -12,7 +11,6 @@ const initialColor = {
 
 const ColorList = ({ colors, updateColors, getColorList }) => {
 
-  const { push } = useHistory();
 
   const [editing, setEditing] = useState(false);
 
@@ -47,14 +45,11 @@ const ColorList = ({ colors, updateColors, getColorList }) => {
       })
   };
 
-  const logout = () => {
-    push('/') 
-  }
+  
 
   return (
     <div className="colors-wrap">
   
-    <button onClick={logout} >Log Out</button>
     
       <p>colors</p>
       
