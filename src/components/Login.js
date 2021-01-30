@@ -48,7 +48,7 @@ render(){
 
           <h1>Welcome to the Bubble App!</h1>
       
-        <form onSubmit={this.handleLogin} >
+        <form >
       
         <label>
             UserName:
@@ -72,7 +72,7 @@ render(){
                 />
           </label>
 
-          <button>Submit</button>
+          <Button onClick ={this.handleLogin}>Submit</Button>
           
         </form>
         </StyledLogin>
@@ -96,4 +96,10 @@ const StyledLogin = styled.div`
   display:flex;
   flex-direction:column;
   margin:15% auto;
+`
+
+const Button = styled.button`
+padding:2rem;
+border-radius:8px;
+font-size:1rem;
 `
