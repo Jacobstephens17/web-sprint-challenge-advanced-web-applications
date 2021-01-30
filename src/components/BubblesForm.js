@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 // import fetchColorData from "../fetchData/fetchColorData";
 // import { fetchColorList } from '../fetchData/fetchColorData'
 import axiosWithAuth from '../helpers/axiosWithAuth';
-import ColorList from '../components/ColorList'
 
 
 class BubblesForm extends React.Component {
