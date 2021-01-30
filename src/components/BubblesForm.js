@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 // import fetchColorData from "../fetchData/fetchColorData";
 // import { fetchColorList } from '../fetchData/fetchColorData'
 import axiosWithAuth from '../helpers/axiosWithAuth';
+import ColorList from '../components/ColorList'
+
 
 class BubblesForm extends React.Component {
 
@@ -10,17 +12,19 @@ class BubblesForm extends React.Component {
         color:'', 
         code: {
             hex:''
-        }
+        },
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
-        console.log('clicked')
         axiosWithAuth()
-        .post('http://localhost:5000/api/colors', this.state)
+        .post(`http://localhost:5000/api/colors`, this.state)
         .then((res) => {
             console.log(res)
             this.setColorList()
+            this.updateColors()
+            this.setColorList(this.state)
+            this.getColorList()
         })
         .catch((err) => {
 
@@ -29,10 +33,16 @@ class BubblesForm extends React.Component {
 
 
     handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
+        if(e.target.name === 'code') {
+            this.setState({ color: e.target.value, code: { hex: e.target.value }})
+        } else{
+
+            this.setState({
+                [e.target.name]: e.target.value
+            })
+        }
     }
+
   
     
     render(){
@@ -54,8 +64,8 @@ class BubblesForm extends React.Component {
                         Hex Code: 
                         <input
                         text='text'
-                        name='hex'
-                        value={this.state.code.hex.value}
+                        name='code'
+                        value={this.state.code.hex}
                         onChange={this.handleChange}
                         />
                     </label>

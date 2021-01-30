@@ -72,7 +72,7 @@ render(){
                 />
           </label>
 
-          <Button onClick ={this.handleLogin}>Submit</Button>
+          <Button onClick={this.handleLogin}>Submit</Button>
           
         </form>
         </StyledLogin>

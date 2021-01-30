@@ -38,7 +38,7 @@ const BubblePage = () => {
 
   useEffect(() => {
     getListData()
-  }, []);
+  }, []); 
 
 
   const logout = () => {
