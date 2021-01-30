@@ -1,6 +1,6 @@
 import React from 'react'
-import fetchColorData from "../fetchData/fetchColorData";
-import { fetchColorList } from '../fetchData/fetchColorData'
+// import fetchColorData from "../fetchData/fetchColorData";
+// import { fetchColorList } from '../fetchData/fetchColorData'
 import axiosWithAuth from '../helpers/axiosWithAuth';
 
 class BubblesForm extends React.Component {

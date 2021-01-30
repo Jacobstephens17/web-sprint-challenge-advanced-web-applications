@@ -7,7 +7,7 @@ import PrivateRoute from "./components/PrivateRoute";
 
 
 function App() {
-const [isLoggedIn, setLoggedIn] = useState(false)
+const setLoggedIn = useState(false)
 
   return (
     <Router>
