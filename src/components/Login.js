@@ -55,6 +55,7 @@ render(){
               <input
                   type='text'
                   name='username'  
+                  placeholder='Lambda School'
                   value={this.state.credentials.username}
                   onChange={this.handleChange}
                 />
@@ -65,6 +66,7 @@ render(){
               <input
                   type='password'
                   name='password'  
+                  placeholder='i<3Lambd4'
                   value={this.state.credentials.password}
                   onChange={this.handleChange}
                 />
